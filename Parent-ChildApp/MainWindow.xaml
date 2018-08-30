@@ -1,0 +1,9 @@
+﻿<Window x:Class="WpfApplication41.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="150" Width="300">
+    <StackPanel>
+        <Button Content="Редактировать первый элемент" Command="{Binding ShowFirstViewCommand}" />
+        <Button Content="Показать список" Command="{Binding ShowSecondViewCommand}" />
+    </StackPanel>
+</Window>

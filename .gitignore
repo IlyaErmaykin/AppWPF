@@ -1,0 +1,7 @@
+AppWPF/bin/
+AppWPF/obj/
+ForTest/bin/
+ForTest/obj/
+Parent-ChildApp/bin/
+Parent-ChildApp/obj/
+*.suo
