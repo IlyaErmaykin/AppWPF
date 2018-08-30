@@ -51,6 +51,20 @@ namespace AppWPF
             runChildWindow();
         }
 
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Size pSize = this.RenderSize;
+
+            Size maxAllowed = new Size(pSize.Width - this.Left, pSize.Height - this.Top);
+
+            //Изменение размера дочернего окна, если оно выходит за рамки
+            if (this.Height > maxAllowed.Height)
+                this.Height = maxAllowed.Height;
+
+            if (this.Width > maxAllowed.Width)
+                this.Width = maxAllowed.Width;
+        }
+
         public void OwnerFunction()
         {
             ChildWindow window = new ChildWindow();

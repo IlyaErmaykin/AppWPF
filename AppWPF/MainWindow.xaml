@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" SizeChanged="Window_SizeChanged">
     <Grid>
         <Button x:Name="BtnNewWindow" Height="100" Width="Auto" Content="Open New Window " Click="BtnNewWindow_Click"/>
     </Grid>
