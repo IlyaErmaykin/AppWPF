@@ -5,3 +5,5 @@ ForTest/obj/
 Parent-ChildApp/bin/
 Parent-ChildApp/obj/
 *.suo
+AppWpfWithMdi/bin/
+AppWpfWithMdi/obj/
