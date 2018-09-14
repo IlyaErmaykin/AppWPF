@@ -1,0 +1,27 @@
+﻿<Window x:Class="ConvertBmpToPng.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConvertBmpToPng"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid >
+        <!--<Image Source=" C:\Program Files (x86)\ScanMaster\SpotWeld\BMP\Cursor.bmp" HorizontalAlignment="Left"/>-->
+
+        <!--<Image Width="200" HorizontalAlignment="Right">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="200" UriSource="C:\Program Files (x86)\ScanMaster\SpotWeld\BMP\Cursor.bmp" />
+            </Image.Source>
+        </Image>-->
+
+        <!--<Button x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+
+        <Canvas>
+            <Canvas.Background>
+                <ImageBrush ImageSource="C:\Program Files (x86)\ScanMaster\SpotWeld\BMP\Cursor.bmp" Ba/>
+            </Canvas.Background>
+        </Canvas>-->
+
+    </Grid>
+</Window>

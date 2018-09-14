@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForTest", "ForTest\ForTest.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWpfWithMdi", "AppWpfWithMdi\AppWpfWithMdi.csproj", "{8EF509C5-8785-4617-8CE6-2C5CE7E4BAA9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertBmpToPng", "ConvertBmpToPng\ConvertBmpToPng.csproj", "{DEDF46C8-C098-43DC-9AAD-C22242103932}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8EF509C5-8785-4617-8CE6-2C5CE7E4BAA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EF509C5-8785-4617-8CE6-2C5CE7E4BAA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EF509C5-8785-4617-8CE6-2C5CE7E4BAA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDF46C8-C098-43DC-9AAD-C22242103932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDF46C8-C098-43DC-9AAD-C22242103932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDF46C8-C098-43DC-9AAD-C22242103932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDF46C8-C098-43DC-9AAD-C22242103932}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
