@@ -5,19 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConvertBmpToPng"
         mc:Ignorable="d"
+        xmlns:converters="clr-namespace:ConvertBmpToPng"
+        Background="GreenYellow"
         Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <converters:ImageToBitmapConverter x:Key="ImageToBitmapConverter" />
+    </Window.Resources>
+
     <Grid >
         <!--<Image Source=" C:\Program Files (x86)\ScanMaster\SpotWeld\BMP\Cursor.bmp" HorizontalAlignment="Left"/>-->
 
-        <!--<Image Width="200" HorizontalAlignment="Right">
-            <Image.Source>
-                <BitmapImage DecodePixelWidth="200" UriSource="C:\Program Files (x86)\ScanMaster\SpotWeld\BMP\Cursor.bmp" />
-            </Image.Source>
-        </Image>-->
-
-        <!--<Button x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-
         <Canvas>
+            <Image>
+                <Image.Source>
+                    <BitmapImage UriSource="{Binding GetPath, Mode=OneWay, Converter={StaticResource ImageToBitmapConverter}}" />
+                </Image.Source>
+            </Image>
+        </Canvas>
+
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Width="75" Click="button_Click" Margin="0,0,0,299" Height="20" VerticalAlignment="Bottom"/>
+
+        <!--<Canvas>
             <Canvas.Background>
                 <ImageBrush ImageSource="C:\Program Files (x86)\ScanMaster\SpotWeld\BMP\Cursor.bmp" Ba/>
             </Canvas.Background>
