@@ -9,7 +9,20 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <StackPanel>
-            <myCtrls:ShowNumberControl x:Name="myShowNumberCtrl" CurrentrNumber="100" />
+            <myCtrls:ShowNumberControl x:Name="myShowNumberCtrl" CurrentrNumber="100" >
+                <myCtrls:ShowNumberControl.Triggers>
+                    <EventTrigger RoutedEvent="myCtrls:ShowNumberControl.Loaded">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard TargetProperty="CurrentNumber">
+                                    <Int32Animation From="100" To="200" Duration="0:0:5" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </myCtrls:ShowNumberControl.Triggers>
+            </myCtrls:ShowNumberControl>
         </StackPanel>
     </Grid>
+
 </Window>
