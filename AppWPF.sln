@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertBmpToPng", "ConvertB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppForDependencyProperty", "AppForDependencyProperty\AppForDependencyProperty.csproj", "{8690E389-9D2B-42CF-BC1C-185B535B985F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckForSepik", "CheckForSepik\CheckForSepik.csproj", "{F418672B-3C1C-4E40-A6AC-45692F305326}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8690E389-9D2B-42CF-BC1C-185B535B985F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8690E389-9D2B-42CF-BC1C-185B535B985F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8690E389-9D2B-42CF-BC1C-185B535B985F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F418672B-3C1C-4E40-A6AC-45692F305326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F418672B-3C1C-4E40-A6AC-45692F305326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F418672B-3C1C-4E40-A6AC-45692F305326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F418672B-3C1C-4E40-A6AC-45692F305326}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
