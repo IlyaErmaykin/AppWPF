@@ -10,10 +10,7 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            int value1 = int.Parse(Console.ReadLine());
-            int value2 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine(value1 * value2);
-        }
+            Console.WriteLine("fix bugs, please");
+		}
     }
 }
