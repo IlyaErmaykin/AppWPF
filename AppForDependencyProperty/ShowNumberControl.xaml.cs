@@ -42,7 +42,7 @@ namespace AppForDependencyProperty
             DependencyProperty.Register("CurrentNumber", typeof(int),
                 typeof(ShowNumberControl),
                 new UIPropertyMetadata(100,
-                    new PropertyChsangedCallack(CurrentNumberChanged)),
+                    new PropertyChangedCallback(CurrentNumberChanged)),
                 new ValidateValueCallback(ValidateCurrentNumber)
             );
 
@@ -64,7 +64,22 @@ namespace AppForDependencyProperty
             }
         }
 
+        /// <summary>
+        /// Current number changed function
+        /// </summary>
+        /// <param name="depObj"></param>
+        /// <param name="args"></param>
+        private static void CurrentNumberChanged(DependencyObject depObj, DependencyPropertyChangedEventArgs args)
+        {
+            // Привести DependencyObject к ShowNumbeControl
+            ShowNumberControl showNumberControl = (ShowNumberControl)depObj;
 
+            // Получить элемент Label в ShowNumberControl
+            Label theLabel = showNumberControl.numberDisplay;
+
+            // Установить для Label новое значение
+            theLabel.Content = args.NewValue.ToString();
+        }
 
         // Обычное свойство .NET
         /// <summary>
@@ -88,7 +103,6 @@ namespace AppForDependencyProperty
 
                 numberDisplay.Content = CurrentrNumber.ToString();
             }
-
         }
     }
 }
