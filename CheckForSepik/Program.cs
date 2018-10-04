@@ -10,34 +10,20 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            int a = 10;
-            int b = 20;
-            int c = 30;
-            if (a > 5)
+            int ageValue = int.Parse(Console.ReadLine());
+
+            if (ageValue > 70)
             {
-                a = 5;
-                if (b < 20)
-                {
-                    a = 7;
-                }
+                Console.WriteLine("старик");
             }
-            b = 10;
-            if (c < b)
+            else if (ageValue < 18)
             {
-                c = 100;
-            }
-            else if (c < 40)
-            {
-                c = 50;
+                Console.WriteLine("ребёнок");
             }
             else
             {
-                c = 10;
+                Console.WriteLine("взрослый");
             }
-
-            Console.WriteLine(a);
-            Console.WriteLine(b);
-            Console.WriteLine(c);
 
             Console.ReadKey();
         }
