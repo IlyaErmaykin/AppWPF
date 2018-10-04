@@ -10,13 +10,14 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            int aValue = int.Parse(Console.ReadLine());
-            int bValue = int.Parse(Console.ReadLine());
-            int cValue = int.Parse(Console.ReadLine());
+            int X1 = int.Parse(Console.ReadLine());
+            int Y1 = int.Parse(Console.ReadLine());
+            int X2 = int.Parse(Console.ReadLine());
+            int Y2 = int.Parse(Console.ReadLine());
 
             string result;
 
-            if ((aValue + bValue > cValue) && (aValue + cValue > bValue) && (bValue + cValue > aValue))
+            if ((X1 == X2) || (Y1 == Y2))
             {
                 result = "yes";
             }
