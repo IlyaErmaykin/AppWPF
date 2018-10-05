@@ -20,9 +20,22 @@ namespace AppForDependencyProperty
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Property for button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(myControl.Data.ToString());
         }
     }
 }
