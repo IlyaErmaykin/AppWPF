@@ -20,15 +20,7 @@ namespace CheckForSepik
 
             string result;
 
-            if ((X1 == X2) && (Y1 == Y2) ||
-                (absX == 1) && (absY == 1) ||
-                (absX == 2) && (absY == 2) ||
-                (absX == 3) && (absY == 3) ||
-                (absX == 4) && (absY == 4) ||
-                (absX == 5) && (absY == 5) ||
-                (absX == 6) && (absY == 6) ||
-                (absX == 7) && (absY == 7)
-                )
+            if ((absX == absY))
             {
                 result = "yes";
             }
