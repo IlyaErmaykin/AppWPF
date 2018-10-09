@@ -15,12 +15,12 @@ namespace CheckForSepik
             int X2 = int.Parse(Console.ReadLine());
             int Y2 = int.Parse(Console.ReadLine());
 
-            int absX = Math.Abs(X1 - X2);
-            int absY = Math.Abs(Y1 - Y2);
+            int absX = Math.Abs(X1 - Y1);
+            int absY = Math.Abs(X2 - Y2);
 
             string result;
 
-            if ((absX == 2) && (absY == 1) || (absX == 1) && (absY == 2))
+            if (absX % 2 == absY % 2)
             {
                 result = "yes";
             }
