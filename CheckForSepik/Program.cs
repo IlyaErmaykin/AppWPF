@@ -11,21 +11,12 @@ namespace CheckForSepik
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            int m = int.Parse(Console.ReadLine());
-            int k = int.Parse(Console.ReadLine());
 
-            string result;
-
-            if ((k - (m * n/2)) % m == 0 || (k - (m * n / 2)) % n == 0)
+            for (int i = 1; i < 10; i++)
             {
-                result = "yes";
+                int result = n * i;
+                Console.WriteLine("{0} * {1} = {2}", i, n, result);
             }
-            else
-            {
-                result = "no";
-            }
-
-            Console.WriteLine(result);
 
             Console.ReadKey();
         }
