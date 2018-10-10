@@ -10,14 +10,20 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
+            int i = int.Parse(Console.ReadLine());
+
             int result = 0;
 
-            for (int i = 0; i < 20; i++)
+            while (i > 0)
             {
-                int growth = int.Parse(Console.ReadLine());
-                if (growth > 160)
+                if (i > 0)
                 {
                     result++;
+                    i = int.Parse(Console.ReadLine());
+                }
+                else
+                {
+                    break;
                 }
             }
 
