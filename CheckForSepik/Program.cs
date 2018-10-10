@@ -16,7 +16,7 @@ namespace CheckForSepik
 
             string result;
 
-            if ((k % n == 0 || k % m == 0) && (n * m >= k))
+            if ((k - (m * n/2)) % m == 0 || (k - (m * n / 2)) % n == 0)
             {
                 result = "yes";
             }
