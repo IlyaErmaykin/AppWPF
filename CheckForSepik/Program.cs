@@ -10,17 +10,13 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            int X1 = int.Parse(Console.ReadLine());
-            int Y1 = int.Parse(Console.ReadLine());
-            int X2 = int.Parse(Console.ReadLine());
-            int Y2 = int.Parse(Console.ReadLine());
-
-            int absX = Math.Abs(X1 - Y1);
-            int absY = Math.Abs(X2 - Y2);
+            int n = int.Parse(Console.ReadLine());
+            int m = int.Parse(Console.ReadLine());
+            int k = int.Parse(Console.ReadLine());
 
             string result;
 
-            if (absX % 2 == absY % 2)
+            if ((k % n == 0 || k % m == 0) && (n * m >= k))
             {
                 result = "yes";
             }
