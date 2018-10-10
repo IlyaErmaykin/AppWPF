@@ -10,21 +10,11 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            int i = int.Parse(Console.ReadLine());
-
             int result = 0;
 
-            while (i > 0)
+            for (int i = int.Parse(Console.ReadLine()); i > 0; i = int.Parse(Console.ReadLine()))
             {
-                if (i > 0)
-                {
-                    result++;
-                    i = int.Parse(Console.ReadLine());
-                }
-                else
-                {
-                    break;
-                }
+                result++;
             }
 
             Console.WriteLine(result);
