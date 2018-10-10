@@ -10,13 +10,18 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
+            int result = 0;
 
-            for (int i = 1; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
-                int result = n * i;
-                Console.WriteLine("{0} * {1} = {2}", i, n, result);
+                int growth = int.Parse(Console.ReadLine());
+                if (growth > 160)
+                {
+                    result++;
+                }
             }
+
+            Console.WriteLine(result);
 
             Console.ReadKey();
         }
