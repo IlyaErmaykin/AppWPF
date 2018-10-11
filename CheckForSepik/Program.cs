@@ -10,15 +10,15 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            double x = int.Parse(Console.ReadLine());
-            int xCommon = int.Parse(Console.ReadLine());
+            string result = "";
 
-            int result = 1;
-
-            while (xCommon > x)
+            for (int i = int.Parse(Console.ReadLine()); i <= 100; i = int.Parse(Console.ReadLine()))
             {
-                x = x + (x * 0.1);
-                result++;
+                if (i < 10)
+                {
+                    continue;
+                }
+                result = result + i + "\n";
             }
 
             Console.WriteLine(result);
