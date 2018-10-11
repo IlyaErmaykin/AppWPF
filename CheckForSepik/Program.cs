@@ -11,7 +11,7 @@ namespace CheckForSepik
         static void Main(string[] args)
         {
             int value = int.Parse(Console.ReadLine());
-            int result = 0;
+            int result = 1;
 
             for (int i = value; i >= 2; i--)
             {

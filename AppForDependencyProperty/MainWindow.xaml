@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppForDependencyProperty"
         xmlns:myCtrls="clr-namespace:AppForDependencyProperty"
-        xmlns:myControls="clr-namespace:AppForDependencyProperty"
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
 
@@ -18,7 +18,15 @@
             <Setter Property="Height"              Value="23"         />
             <Setter Property="HorizontalAlignment" Value="Left"       />
             <Setter Property="VerticalAlignment"   Value="Top"        />
-            <Setter Property="Margin"              Value="12,276,0,0" />
+            <Setter Property="Margin"              Value="12,65,0,0" />
+        </Style>
+
+        <Style x:Key="ButtonDownStyle" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+            <Setter Property="Content" Value="Down" />
+        </Style>
+
+        <Style x:Key="ButtonUpStyle" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+            <Setter Property="Content" Value="Up" />
         </Style>
 
         <!--Slider control style-->
@@ -34,10 +42,25 @@
 
     <!--Main container-->
     <Grid>
-        <myControls:MyControl x:Name="myControl" Data="{Binding ElementName=slider1, Path=Value}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="194*"/>
+            <RowDefinition Height="125*"/>
+        </Grid.RowDefinitions>
+        <!--<myControls:MyControl x:Name="myControl" Data="{Binding ElementName=slider1, Path=Value}" />-->
 
         <Button Name="button1" Style="{StaticResource ButtonStyle}" Click="button_Click" />
 
         <Slider Name="slider1" Style="{StaticResource SliderStyle}" />
+
+        <DockPanel Height="220" VerticalAlignment="Bottom" Margin="0,0,0,6" Grid.RowSpan="2">
+            <!--<myControls:MyImageControl>
+                <myControls:MyImageControl.Image>-->
+            <Image Source="{Binding Path=PathImage}" Height="225" Width="225"/>
+            <!--</myControls:MyImageControl.Image>
+            </myControls:MyImageControl>-->
+            <Button Name="button4" Style="{StaticResource ButtonDownStyle}" Click="NewImageClick" />
+            <Button Name="button2" Style="{StaticResource ButtonDownStyle}" Click="ButtonDownClick" />
+            <Button Name="button3" Style="{StaticResource ButtonUpStyle}" Click="ButtonUpClick" />
+        </DockPanel>
     </Grid>
 </Window>
