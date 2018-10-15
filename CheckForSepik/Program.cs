@@ -10,25 +10,19 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            int valueA = int.Parse(Console.ReadLine());
-            int valueB = int.Parse(Console.ReadLine());
-            int count = 0;
-
-            double result = 0;
-
-            for (int i = valueA; valueA <= valueB; i++)
-            {
-                if (valueA % 3 == 0)
-                {
-                    result = result + valueA;
-                    count++;
-                }
-                valueA++;
-            }
-
-            Console.WriteLine(result / count);
+            Task.PrintColoredText("This text should be red", ConsoleColor.Red);
+            Task.PrintColoredText("This text should be yellow", ConsoleColor.Yellow);
 
             Console.ReadKey();
+        }
+    }
+
+    class Task
+    {
+        public static void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(text, Console.ForegroundColor);
         }
     }
 }
