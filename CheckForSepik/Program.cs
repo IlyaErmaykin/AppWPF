@@ -10,7 +10,7 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            Task.PrintAsterisks(10);
+            Task.PrintAsteriskBox(5, 3);
 
             Console.ReadKey();
         }
@@ -18,6 +18,14 @@ namespace CheckForSepik
 
     class Task
     {
+        static internal void PrintAsteriskBox(int numberColuns, int numberRows)
+        {
+            for (int i = 1; i <= numberRows; i++)
+            {
+                PrintAsterisks(numberColuns);
+            }
+        }
+
         static internal void PrintAsterisks(int number)
         {
             string count = "";
