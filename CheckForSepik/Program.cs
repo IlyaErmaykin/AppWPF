@@ -10,18 +10,23 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            string result = "";
+            int valueA = int.Parse(Console.ReadLine());
+            int valueB = int.Parse(Console.ReadLine());
+            int count = 0;
 
-            for (int i = int.Parse(Console.ReadLine()); i <= 100; i = int.Parse(Console.ReadLine()))
+            double result = 0;
+
+            for (int i = valueA; valueA <= valueB; i++)
             {
-                if (i < 10)
+                if (valueA % 3 == 0)
                 {
-                    continue;
+                    result = result + valueA;
+                    count++;
                 }
-                result = result + i + "\n";
+                valueA++;
             }
 
-            Console.WriteLine(result);
+            Console.WriteLine(result / count);
 
             Console.ReadKey();
         }
