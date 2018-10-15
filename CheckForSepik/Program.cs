@@ -10,8 +10,7 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            Task.PrintColoredText("This text should be red", ConsoleColor.Red);
-            Task.PrintColoredText("This text should be yellow", ConsoleColor.Yellow);
+            Task.PrintAsterisks(10);
 
             Console.ReadKey();
         }
@@ -19,10 +18,15 @@ namespace CheckForSepik
 
     class Task
     {
-        public static void PrintColoredText(string text, ConsoleColor color)
+        static internal void PrintAsterisks(int number)
         {
-            Console.ForegroundColor = color;
-            Console.WriteLine(text, Console.ForegroundColor);
+            string count = "";
+            for (int i = 1; i <= number; i++)
+            {
+                count = count + "*";
+            }
+
+            Console.WriteLine(count);
         }
     }
 }
