@@ -10,20 +10,52 @@ namespace CheckForSepik
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            int e = int.Parse(Console.ReadLine());
+            string mostWidespread = Task.GetMostWidespread(new[] { "Emperor Penguin", "Macaroni Penguin", "Emperor Penguin", "Little Penguin" });
+            Console.WriteLine(mostWidespread); // Emperor Penguin
 
-            Console.WriteLine(n + "^" + e + "=" + Task.Power(n, e));
             Console.ReadKey();
         }
     }
 
     public class Task
     {
-        public static double Power(int number, int exponent)
+        public static string GetMostWidespread(string[] arr)
         {
-            double result = Math.Pow(number, exponent);
-            return result;
+            int EmperorPenguins = 0;
+            int LittlePenguins = 0;
+            int MacaroniPenguins = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == "Emperor Penguin")
+                {
+                    EmperorPenguins++;
+                    //Console.WriteLine(arr[i]);
+                }
+                else if (arr[i] == "Little Penguin")
+                {
+                    LittlePenguins++;
+                    //Console.WriteLine(arr[i]);
+                }
+                else if (arr[i] == "Macaroni Penguin")
+                {
+                    MacaroniPenguins++;
+                    //Console.WriteLine(arr[i]);
+                }
+            }
+
+            if (EmperorPenguins >= LittlePenguins && EmperorPenguins >= MacaroniPenguins)
+            {
+                return "Emperor Penguin";
+            }
+            else if (LittlePenguins >= EmperorPenguins && LittlePenguins >= MacaroniPenguins)
+            {
+                return "Little Penguin";
+            }
+            else
+            {
+                return "Macaroni Penguin";
+            }
         }
     }
 }
