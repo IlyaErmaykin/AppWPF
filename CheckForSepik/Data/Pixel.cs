@@ -7,25 +7,25 @@ using System.Windows.Forms;
 
 namespace CheckForSepik.Data
 {
-    /// <summary>
-    /// Pixel class
-    /// </summary>
-    public class Pixel
-    {
-        /// <summary>
-        /// R value field
-        /// </summary>
-        private double r;
+	/// <summary>
+	/// Pixel class
+	/// </summary>
+	public class Pixel
+	{
+		/// <summary>
+		/// R value field
+		/// </summary>
+		private double r;
 
 		/// <summary>
 		/// G value field
 		/// </summary>
 		private double g;
 
-        /// <summary>
-        /// B value field
-        /// </summary>
-        private double b;
+		/// <summary>
+		/// B value field
+		/// </summary>
+		private double b;
 
 		/// <summary>
 		/// R channel property
@@ -35,14 +35,7 @@ namespace CheckForSepik.Data
 			get { return this.r; }
 			set
 			{
-				if (value > 1)
-				{
-					this.r = 1;
-				}
-				else
-				{
-					this.r = value;
-				}
+				this.r = CheckValue(value);
 			}
 		}
 
@@ -54,14 +47,7 @@ namespace CheckForSepik.Data
 			get { return this.g; }
 			set
 			{
-				if (value > 1)
-				{
-					this.g = 1;
-				}
-				else
-				{
-					this.g = value;
-				}
+				this.g = CheckValue(value);
 			}
 		}
 
@@ -73,15 +59,22 @@ namespace CheckForSepik.Data
 			get { return this.b; }
 			set
 			{
-				if (value > 1)
-				{
-					this.b = 1;
-				}
-				else
-				{
-					this.b = value;
-				}
+				this.b = CheckValue(value);
 			}
+		}
+
+		/// <summary>
+		/// Check value function
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		private double CheckValue(double value)
+		{
+			if (value < 0 || value > 1)
+			{
+				throw new ArgumentException();
+			}
+			return value;
 		}
 	}
 }
