@@ -64,6 +64,18 @@ namespace CheckForSepik.Data
 		}
 
 		/// <summary>
+		/// Trim function
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public static double Trim(double value)
+		{
+			if (value < 0) return 0;
+			if (value > 1) return 1;
+			return value;
+		}
+
+		/// <summary>
 		/// Check value function
 		/// </summary>
 		/// <param name="value"></param>
