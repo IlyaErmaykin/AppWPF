@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CheckForSepik.Data
 {
@@ -32,7 +33,17 @@ namespace CheckForSepik.Data
 		public double R
 		{
 			get { return this.r; }
-			set { this.r = value; }
+			set
+			{
+				if (value > 1)
+				{
+					this.r = 1;
+				}
+				else
+				{
+					this.r = value;
+				}
+			}
 		}
 
 		/// <summary>
@@ -41,7 +52,17 @@ namespace CheckForSepik.Data
 		public double G
 		{
 			get { return this.g; }
-			set { this.g = value; }
+			set
+			{
+				if (value > 1)
+				{
+					this.g = 1;
+				}
+				else
+				{
+					this.g = value;
+				}
+			}
 		}
 
 		/// <summary>
@@ -50,7 +71,17 @@ namespace CheckForSepik.Data
 		public double B
 		{
 			get { return this.b; }
-			set { this.b = value; }
+			set
+			{
+				if (value > 1)
+				{
+					this.b = 1;
+				}
+				else
+				{
+					this.b = value;
+				}
+			}
 		}
 	}
 }
