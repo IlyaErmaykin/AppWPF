@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F418672B-3C1C-4E40-A6AC-45692F305326}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CheckForSepik</RootNamespace>
     <AssemblyName>CheckForSepik</AssemblyName>
@@ -32,13 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Drawing" />
+	<Reference Include="System.Windows.Forms" />
+	<Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,16 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Pixel.cs" />
-    <Compile Include="Filters\ParameterInfo.cs" />
+	<Compile Include="Filters\ParameterInfo.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Window\MainWindow.cs">
-      <SubType>Form</SubType>
+		<SubType>Form</SubType>
     </Compile>
     <Compile Include="Data\Photo.cs" />
     <Compile Include="Filters\IFilter.cs" />
     <Compile Include="Data\Convertors.cs" />
     <Compile Include="Filters\LighteningFilter.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

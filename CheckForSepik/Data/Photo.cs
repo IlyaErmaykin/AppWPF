@@ -1,4 +1,3 @@
-using CheckForSepik.Data;
 using System;
 
 namespace MyPhotoshop
@@ -7,7 +6,7 @@ namespace MyPhotoshop
 	{
 		public int width;
 		public int height;
-		public Pixel[,] data;
+		public double[,,] data;
 	}
 }
 
