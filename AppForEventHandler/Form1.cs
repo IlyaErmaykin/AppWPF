@@ -44,5 +44,27 @@ namespace AppForEventРandler
 				//do something
 			}
 		}
+
+		private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				//MessageBox.Show("Left tButton");
+			}
+			else
+			{
+				ContextMenuStrip my_menu = new ContextMenuStrip();
+				int position_xy_mouse_row = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+
+				//MessageBox.Show("Rigth tButton");
+				//MessageBox.Show(position_xy_mouse_row.ToString());
+
+				if (position_xy_mouse_row > -1)
+				{
+					//my_menu.Items.Add("Del").Name = "Del";
+					contextMenuStrip1.Show(dataGridView1, new Point(e.X, e.Y));
+				}
+			}
+		}
 	}
 }
