@@ -10,7 +10,7 @@ namespace CheckForSepik.Data
 	/// <summary>
 	/// Pixel class
 	/// </summary>
-	public class Pixel
+	public struct Pixel
 	{
 		/// <summary>
 		/// R value field
@@ -87,6 +87,20 @@ namespace CheckForSepik.Data
 				throw new ArgumentException();
 			}
 			return value;
+		}
+
+		/// <summary>
+		/// default constructor with 
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="g"></param>
+		/// <param name="b"></param>
+		public Pixel(double r, double g, double b)
+		{
+			this.r = this.g = this.b = 0;
+			this.R = r;
+			this.G = g;
+			this.B = b;
 		}
 	}
 }
