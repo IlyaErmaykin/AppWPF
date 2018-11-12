@@ -11,7 +11,7 @@ namespace MyPhotoshop
 	{
 		public readonly int width;
 		public readonly int height;
-		public readonly Pixel[,] data;
+		private readonly Pixel[,] data;
 
 		//public int Width
 		//{
@@ -30,7 +30,12 @@ namespace MyPhotoshop
 		//	//this.Width = bmp.Width;
 		//}
 
-				/// <summary>
+		public Pixel this[int x, int y]
+		{
+			get { return data[x, y]; }
+		}
+
+		/// <summary>
 		/// Default constructor with parametrs
 		/// </summary>
 		/// <param name="width"></param>
