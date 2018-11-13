@@ -102,5 +102,23 @@ namespace CheckForSepik.Data
 			this.G = g;
 			this.B = b;
 		}
+
+		public static Pixel operator *(Pixel p, double v)
+		{
+			return new Pixel(
+					Pixel.Trim(p.R * v),
+					Pixel.Trim(p.G * v),
+					Pixel.Trim(p.B * v)
+					);
+		}
+
+		public static Pixel operator *(double v, Pixel p)
+		{
+			return new Pixel(
+					Pixel.Trim(p.R * v),
+					Pixel.Trim(p.G * v),
+					Pixel.Trim(p.B * v)
+					);
+		}
 	}
 }
