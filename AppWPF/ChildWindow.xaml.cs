@@ -25,6 +25,16 @@ namespace AppWPF
 
             MainWindow mWindow = this.Owner as MainWindow;
 
-        }
-    }
+		}
+
+		public void Executed_CloseWindow(object sender, ExecutedRoutedEventArgs e)
+		{
+			this.Close();
+		}
+
+		public void CanExecuted_CloseWindow(object sender, CanExecuteRoutedEventArgs e)
+		{
+			e.CanExecute = true;
+		}
+	}
 }

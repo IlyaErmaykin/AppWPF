@@ -20,57 +20,73 @@ namespace AppWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+		ChildWindow window = new ChildWindow();
+		//public MainWindow()
+		//{
+		//    InitializeComponent();
+
+		//    childWindow = new ChildWindow();
+		//    //childWindow.Owner = this;
+
+		//    //OwnerFunction();
+		//    //closeChildWindow();
+		//}
+		//ChildWindow childWindow;
+
+		//public void runChildWindow()
+		//{
+		//    //MessageBox.Show(childWindow.Getmessage());
+		//    //childWindow.Show();
+
+		//    OwnerFunction();
+		//}
+
+		//public void closeChildWindow()
+		//{
+		//    //MessageBox.Show(childWindow.Getmessage());
+		//    childWindow.Close();
+		//}
+
+		private void LeftBtnNewWindow_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
+			CreateNewWindow();
+		}
 
-            childWindow = new ChildWindow();
-            //childWindow.Owner = this;
+		private void RightBtnNewWindow_Click(object sender, RoutedEventArgs e)
+		{
+			CreateNewWindow();
+		}
 
-            //OwnerFunction();
-            //closeChildWindow();
-        }
-        ChildWindow childWindow;
+		private void CreateNewWindow()
+		{
+			if (window != null)
+			{
+				window.Close();
+				// Доделывать отсюда
+				//window.Create();
+			}
+			else {window.Show();}
+		}
 
-        public void runChildWindow()
-        {
-            //MessageBox.Show(childWindow.Getmessage());
-            //childWindow.Show();
+		private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+		{
+		}
 
-            OwnerFunction();
-        }
+		public void Executed_New(object sender, ExecutedRoutedEventArgs e)
+		{
+			window.Show();
+		}
 
-        public void closeChildWindow()
-        {
-            //MessageBox.Show(childWindow.Getmessage());
-            childWindow.Close();
-        }
+		public void CanExecuted_New(object sender, CanExecuteRoutedEventArgs e)
+		{
+			e.CanExecute = true;
+		}
 
-        private void BtnNewWindow_Click(object sender, RoutedEventArgs e)
-        {
-            runChildWindow();
-        }
-
-        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            Size pSize = this.RenderSize;
-
-            Size maxAllowed = new Size(pSize.Width - this.Left, pSize.Height - this.Top);
-
-            //Изменение размера дочернего окна, если оно выходит за рамки
-            if (this.Height > maxAllowed.Height)
-                this.Height = maxAllowed.Height;
-
-            if (this.Width > maxAllowed.Width)
-                this.Width = maxAllowed.Width;
-        }
-
-        public void OwnerFunction()
-        {
-            ChildWindow window = new ChildWindow();
-            window.Owner = this;
-            window.Title = "ChildWindow";
-            window.Show();
-        }
-    }
+		//public void OwnerFunction()
+		//{
+		//	window.Owner = this;
+		//	window.Title = "ChildWindow";
+		//	window.Show();
+		//}
+	}
 }

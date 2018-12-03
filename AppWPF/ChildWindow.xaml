@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:AppWPF"
         mc:Ignorable="d"
         Title="ChildWindow" Height="300" Width="300">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="Executed_CloseWindow"
+                        CanExecute="CanExecuted_CloseWindow" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.Close"
+                    Gesture="Esc" />
+    </Window.InputBindings>
+    <!--<Window.InputBinding>
+        <KeyBinding Command="Exit" Key="Esc" Modifiers="Control"/>
+    </Window.InputBinding>-->
     <Grid>
-        
+        <Label Content="Горячая клавиша [Ctrl+N]" />
     </Grid>
 </Window>
