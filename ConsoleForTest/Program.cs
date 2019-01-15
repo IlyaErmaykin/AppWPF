@@ -7,26 +7,65 @@ using System.Threading.Tasks;
 
 namespace ConsoleForTest
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			//string puthFirst = @"C:\Projects\Spotweld_New\SpotWeld.Net\bin\Debug\Database\SpotWeld2.mdb";
-			string puthSecond = @"C:\Users\LEX\Desktop\#3374\SWBK_SN(171018_1321).mdb";
+    //Написать программу сортировки 
+    //координат точек в массиве структур, 
+    //содержащих объединения по 
+    //убыванию их евклидового расстояния 
+    //относительно точки (0, 0) 
 
-			using (StreamReader sr = new StreamReader(puthSecond, true))
-			{
-				while (sr.Peek() >= 0)
-				{
-					Console.WriteLine(sr.ReadToEnd());
-				}
+    //1 создание двумерного массива; 
+    //2 расчет евклидового расстояния; 
+    //3 сортировка по убыванию 
+    class Program
+    {
+        /// <summary> 
+        /// Create array function 
+        /// </summary> 
+        static int[,] CreateArr()
+        {
+            int[,] MyArray = { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 6, 7 }, { 9, 10 } };
 
-				//Чтение только первого символа, чтобы не ждать весь файл
-				//sr.Read();
+            //Random ran = new Random();
 
-				Console.WriteLine("The encoding used was {0}", sr.CurrentEncoding);
-				Console.ReadKey();
-			}
-		}
-	}
+            // Инициализируем данный массив 
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    //MyArray[i, j] = ran.Next(0, 10); 
+                    Console.Write("{0}\t", MyArray[i, j]);
+                }
+                Console.WriteLine();
+            }
+            return MyArray;
+        }
+
+
+        /// <summary> 
+        /// Distance calculation function 
+        /// </summary> 
+        void DistanceCalculation()
+        {
+
+        }
+
+        /// <summary> 
+        /// Sorting function 
+        /// </summary> 
+        void SortingFunction()
+        { }
+
+        /// <summary> 
+        /// 
+        /// </summary> 
+        /// <param name="args"></param> 
+        static void Main(string[] args)
+        {
+            CreateArr();
+            //var arr = CreateArr
+            //DistanceCalculation(int MyArray[,]);
+
+            Console.ReadKey();
+        }
+    }
 }
