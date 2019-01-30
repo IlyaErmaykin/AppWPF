@@ -41,7 +41,7 @@ namespace AppWPF
         {
             createNewWindow();
         }
-        
+
         /// <summary>
         /// Child window field;
         /// </summary>
@@ -141,7 +141,7 @@ namespace AppWPF
         private void OnTimerTick(object sender, EventArgs e)
         {
             if (timer.IsEnabled)
-            UpdateTimerState(false);
+                UpdateTimerState(false);
             closeWindow();
         }
 

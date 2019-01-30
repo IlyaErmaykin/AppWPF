@@ -1,0 +1,47 @@
+﻿<Window x:Class="AppWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" SizeChanged="Window_SizeChanged">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New"
+                        Executed="Executed_New"
+                        CanExecute="CanExecuted_New" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.New"
+                    Gesture="Ctrl+N" />
+    </Window.InputBindings>
+
+    <Window.Resources>
+        <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="100" />
+            <Setter Property="Width" Value="200" />
+
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0">
+            <Button x:Name="BtnNewWindow" Style="{StaticResource DefaultButtonStyle}" Content="Open New Window " Click="LeftBtnNewWindow_Click"/>
+        </Grid>
+        <Grid Grid.Column="1" >
+            <Button x:Name="BtnNewWindow_" Style="{StaticResource DefaultButtonStyle}" Content="Open Other New Window " Click="RightBtnNewWindow_Click"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" >
+            <Label HorizontalAlignment="Center" Content="Для открытия окна горячая клавиша [Ctrl+N]" />
+        </Grid>
+    </Grid>
+</Window>
