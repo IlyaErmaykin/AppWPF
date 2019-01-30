@@ -20,7 +20,7 @@
         <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="100" />
             <Setter Property="Width" Value="200" />
-            
+
         </Style>
     </Window.Resources>
 
@@ -29,12 +29,19 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
 
         <Grid Grid.Column="0">
             <Button x:Name="BtnNewWindow" Style="{StaticResource DefaultButtonStyle}" Content="Open New Window " Click="LeftBtnNewWindow_Click"/>
         </Grid>
         <Grid Grid.Column="1" >
             <Button x:Name="BtnNewWindow_" Style="{StaticResource DefaultButtonStyle}" Content="Open Other New Window " Click="RightBtnNewWindow_Click"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" >
+            <Label HorizontalAlignment="Center" Content="Для открытия окна горячая клавиша [Ctrl+N]" />
         </Grid>
     </Grid>
 </Window>
