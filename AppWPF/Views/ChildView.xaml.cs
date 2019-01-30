@@ -18,12 +18,12 @@ namespace AppWPF
     /// <summary>
     /// Логика взаимодействия для ChildWindow.xaml
     /// </summary>
-    public partial class ChildWindow : Window
+    public partial class ChildView : Window
     {
         /// <summary>
         /// Default constructor;
         /// </summary>
-        public ChildWindow()
+        public ChildView()
         {
             InitializeComponent();
 

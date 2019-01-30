@@ -45,7 +45,7 @@ namespace AppWPF
         /// <summary>
         /// Child window field;
         /// </summary>
-        ChildWindow childWindow;
+        ChildView childWindow;
 
         /// <summary>
         /// Create new window function;
@@ -54,13 +54,13 @@ namespace AppWPF
         {
             if (childWindow == null)  // || childWindow.IsDisposed
             {
-                childWindow = new ChildWindow();
+                childWindow = new ChildView();
                 childWindow.Show();
             }
             else
             {
                 childWindow.Close();
-                childWindow = new ChildWindow();
+                childWindow = new ChildView();
                 childWindow.Show();
             }
         }
