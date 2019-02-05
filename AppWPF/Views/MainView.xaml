@@ -6,24 +6,30 @@
         xmlns:local="clr-namespace:AppWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" SizeChanged="Window_SizeChanged">
+
+    <!--Main window command bindings-->
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.New"
                         Executed="Executed_New"
                         CanExecute="CanExecuted_New" />
     </Window.CommandBindings>
+
+    <!--Main window custom command bingings-->
     <Window.InputBindings>
         <KeyBinding Command="ApplicationCommands.New"
                     Gesture="Ctrl+N" />
     </Window.InputBindings>
 
+    <!--Main window resources-->
     <Window.Resources>
+        <!--Default button style-->
         <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="100" />
             <Setter Property="Width" Value="200" />
-
         </Style>
     </Window.Resources>
 
+    <!--Main container-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -34,12 +40,21 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
+        <!--Right grid with button-->
         <Grid Grid.Column="0">
             <Button x:Name="BtnNewWindow" Style="{StaticResource DefaultButtonStyle}" Content="Open New Window " Click="LeftBtnNewWindow_Click"/>
         </Grid>
+        
+        <!--Left grid with button-->
         <Grid Grid.Column="1" >
-            <Button x:Name="BtnNewWindow_" Style="{StaticResource DefaultButtonStyle}" Content="Open Other New Window " Click="RightBtnNewWindow_Click"/>
+            <StackPanel>
+                <Button Content="Редактировать первый элемент" Command="{Binding ShowFirstViewCommand, Mode=TwoWay}" />
+                <Button Content="Показать список" Command="{Binding ShowSecondViewCommand, Mode=TwoWay}" />
+                <Button Content="MyButton" Command="{Binding ShowSecondViewCommand, Mode=TwoWay}" />
+            </StackPanel>
         </Grid>
+
+        <!--Bottom grid with label-->
         <Grid Grid.Row="1" Grid.ColumnSpan="2" >
             <Label HorizontalAlignment="Center" Content="Для открытия окна горячая клавиша [Ctrl+N]" />
         </Grid>

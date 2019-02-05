@@ -7,22 +7,41 @@
         mc:Ignorable="d"
         Title="ChildWindow" Height="300" Width="300">
 
+    <!--Child window command bindings-->
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close"
                         Executed="Executed_CloseWindow"
                         CanExecute="CanExecuted_CloseWindow" />
     </Window.CommandBindings>
+
+    <!--Child window custom command bingings-->
     <Window.InputBindings>
         <KeyBinding Command="ApplicationCommands.Close"
                     Gesture="Esc" />
     </Window.InputBindings>
-    <!--<Window.InputBinding>
-        <KeyBinding Command="Exit" Key="Esc" Modifiers="Control"/>
-    </Window.InputBinding>-->
+
+    <!--Main window resources-->
+    <Window.Resources>
+
+        <!--Default label style-->
+        <Style x:Key="DefaultLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="HorizontalAlignment"  Value="Center"   />
+            <Setter Property="Content"   Value="      Для закрытия окна &#10; горячая клавиша [Ctrl+N]"  />
+        </Style>
+        
+        <!--Default button style-->
+        <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Height"  Value="30"   />
+            <Setter Property="Width"   Value="100"  />
+            <Setter Property="Content" Value="Exit" />
+        </Style>
+    </Window.Resources>
+    
+    <!--Main container-->
     <Grid>
         <StackPanel>
-            <Label HorizontalAlignment="Center" Content="      Для закрытия окна &#10; горячая клавиша [Ctrl+N]" />
-            <Button x:Name="ExitButtonWindow" Width="100" Height="30" Content="Exit" Click="ExitWindowButton_Click"/>
+            <Label Style="{StaticResource DefaultLabelStyle}" />
+            <Button x:Name="ExitButtonWindow" Click="ExitWindowButton_Click" Style="{StaticResource DefaultButtonStyle}"/>
         </StackPanel>
     </Grid>
 </Window>

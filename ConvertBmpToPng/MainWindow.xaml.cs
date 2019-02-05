@@ -25,8 +25,14 @@ namespace ConvertBmpToPng
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Get path property
+        /// </summary>
         public string GetPath { get; set; }
 
+        /// <summary>
+        /// Main window default constructor
+        /// </summary>
         public MainWindow()
         {
             this.DataContext = this;
@@ -41,11 +47,20 @@ namespace ConvertBmpToPng
         //    Bitmap bitmap = (Bitmap)pictureBox1.Image;
         //}
 
+        /// <summary>
+        /// Button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Click(object sender, RoutedEventArgs e)
         {
             
         }
 
+        /// <summary>
+        /// Icon path function
+        /// </summary>
+        /// <returns></returns>
         public string IconPath()
         {
             return @"C:\Projects\Spotweld_New\Spotweld\BMP\Cursor.bmp";

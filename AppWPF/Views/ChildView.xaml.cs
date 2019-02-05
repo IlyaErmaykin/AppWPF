@@ -25,10 +25,11 @@ namespace AppWPF
         /// </summary>
         public ChildView()
         {
+            this.DataContext = this;
+
             InitializeComponent();
 
             MainWindow mWindow = this.Owner as MainWindow;
-
         }
 
         /// <summary>
