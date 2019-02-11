@@ -38,27 +38,32 @@ namespace ConsoleForTest
         public void DistanceCalculation(int[,] newArray)
         {
             int[,] distanceArray = null;
-            int x0 = 0;
-            int y0 = 0;  
-            int x1 = 0;
-            int y1 = 0;
+            double x0 = 0;
+            double y0 = 0;
+            double x1 = 0;
+            double y1 = 0;
+
+            double countDistance = 0;
+
 
             // Инициализируем данный массив 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < newArray.GetLength(0); i++)
             {
-                for (int j = 0; j < 2; j++)
+                for (int j = 0; j < newArray.GetLength(1); j++)
                 {
                     //MyArray[i, j] = ran.Next(0, 10); 
-                    //Console.Write("{0}\t", newArray[i, j]);
-                    if (j < 1)
-                    {
-                        x1 = j;
-                    }
-                    else y1 = j;
+                    Console.Write("{0}\t", newArray[i, j]);
 
-                    Console.WriteLine($"{x1}, {y1}");
+                    //distanceArray[i, j] = newArray[i, j];
+                    //if (j < 1)
+                    //{
+                    //    x1 = newArray.GetLength(0);
+                    //}
+                    //else y1 = newArray.GetLength(1);
+
+                    //Console.WriteLine($"{x1}, {y1}");
                 }
-                //Console.WriteLine();
+                Console.WriteLine();
             }
         }
 
