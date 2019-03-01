@@ -35,8 +35,5 @@ namespace ForTest
             //sWindow.Owner = this;
             sWindow.Show();
         }
-
-        //for test;
-        //1;
     }
 }
