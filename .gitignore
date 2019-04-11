@@ -17,6 +17,9 @@ AppForEventHandler/bin/
 AppForEventHandler/obj/
 ConsoleForTest/bin/
 ConsoleForTest/obj/
+.vs/
 AppForDesignPatterns/bin/
 AppForDesignPatterns/obj/
 
+AppForSteams/bin/
+AppForSteams/obj/
