@@ -13,20 +13,23 @@ namespace AppForStreams
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("***** Synch Delegate Review *****");
-            // Вывести идентификатор выполняющегося потока.
-            Console.WriteLine("Main() invoked on thread {0}.",
-            Thread.CurrentThread.ManagedThreadId);
-            // Вызвать Add() в синхронном режиме.
+            Console.WriteLine("***** Async Delegate Invocation *****");
+            // Вывести идентификатор выполняющегося потока
+            Console.WriteLine("Main() invoked on thread {0}.", Thread.CurrentThread.ManagedThreadId);
+
+            // Вызвать Add() во вторичном потоке
             BinaryOp b = new BinaryOp(Add);
-            // Можно было бы также написать b.Invoke (10, 10);
-            int answer = b(10, 10);
-            // Эти строки не будут выполняться до тех пор,
-            // пока не завершится метод Add().
+            IAsyncResult iftAR = b.BeginInvoke(10, 10, null, null);
+
+            // Выполнить другую работу в первичном потоке...
             Console.WriteLine("Doing more work in Main()!");
+
+            // Получить результат метода Add() по готовности
+            int answer = b.EndInvoke(iftAR);
             Console.WriteLine("10 + 10 is {0}.", answer);
             Console.ReadLine();
         }
+
         static int Add(int x, int y)
         {
             // Вывести идентификатор выполняющегося потока.
