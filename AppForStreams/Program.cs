@@ -21,6 +21,13 @@ namespace AppForStreams
             BinaryOp b = new BinaryOp(Add);
             IAsyncResult iftAR = b.BeginInvoke(10, 10, null, null);
 
+            //Это сообщение продолжит выводиться до тех пор, пока не будет завершен метод Add()
+            while (!iftAR.IsCompleted)
+            {
+                Console.WriteLine("Doing more work in Main()!");
+                Thread.Sleep(1000);
+            }
+
             // Выполнить другую работу в первичном потоке...
             Console.WriteLine("Doing more work in Main()!");
 
