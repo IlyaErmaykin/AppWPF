@@ -13,38 +13,37 @@ namespace AppForStreams
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("***** Async Delegate Invocation *****");
-            // Вывести идентификатор выполняющегося потока
-            Console.WriteLine("Main() invoked on thread {0}.", Thread.CurrentThread.ManagedThreadId);
+            //Console.WriteLine("***** AsyncCallbackDelegate Example *****");
+            //Console.WriteLine("Main() invoked on thread {0}.", Thread.CurrentThread.ManagedThreadId);
 
-            // Вызвать Add() во вторичном потоке
-            BinaryOp b = new BinaryOp(Add);
-            IAsyncResult iftAR = b.BeginInvoke(10, 10, null, null);
+            //BinaryOp b = new BinaryOp(Add);
+            //IAsyncResult iftAR = b.BeginInvoke(10, 10, new AsyncCallback(AddComplete), null);
 
-            //Это сообщение продолжит выводиться до тех пор, пока не будет завершен метод Add()
-            while (!iftAR.IsCompleted)
-            {
-                Console.WriteLine("Doing more work in Main()!");
-                Thread.Sleep(1000);
-            }
+            //// Предположим, что здесь выполняется какая-то другая работа..
+            //while (!iftAR.IsCompleted)
+            //{
+            //    Thread.Sleep(1000);
+            //    Console.WriteLine("Working....");
+            //}
 
-            // Выполнить другую работу в первичном потоке...
-            Console.WriteLine("Doing more work in Main()!");
+            SrartApp srartApp = new SrartApp();
 
-            // Получить результат метода Add() по готовности
-            int answer = b.EndInvoke(iftAR);
-            Console.WriteLine("10 + 10 is {0}.", answer);
+            srartApp.SrartAppFunction();
+
             Console.ReadLine();
         }
 
         static int Add(int x, int y)
         {
-            // Вывести идентификатор выполняющегося потока.
             Console.WriteLine("Add () invoked on thread {0}.",
             Thread.CurrentThread.ManagedThreadId);
-            // Организовать паузу для моделирования длительной операции.
             Thread.Sleep(5000);
             return x + y;
+        }
+
+        static void AddComplete(IAsyncResult itfAR)
+        {
+            Console.WriteLine("");
         }
     }
 
