@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ConsoleForTest
 {
@@ -43,40 +44,36 @@ namespace ConsoleForTest
 
     class Program 
     {
-
         static void Main(string[] args)
         {
-            Counter counter = new Counter();
+            //Counter counter = new Counter();
 
-            string sourcePath_1 = @"C:\Users\LEX\Desktop\_1.txt";
-            string sourcePath_2 = @"C:\Users\LEX\Desktop\_2.txt";
-            string sourceText = "牛肉";
+            string sourcePath_1 = @"D:\users\IErmaykin\Desktop\Слата\inpetRevice.xls";
+            string sourcePath_2 = @"D:\users\IErmaykin\Desktop\Слата\output.xlsx";
 
-            string unicodeString = "his string contains the unicode character Pi (\u03a0)";
-            //var result = counter.GetFileEncoding(sourceText);
+            // only one instance of excel
+            Excel.Application excelApplication = new Excel.Application();
 
-            //byte[] utbBytes = Encoding.UTF8.GetBytes(sourceText);
-            //var result = Encoding.UTF8.GetString(utbBytes, 0, utbBytes.Length);
+            var srcPath = sourcePath_1;
+            Excel.Workbook srcworkBook = excelApplication.Workbooks.Open(srcPath);
+            Excel.Worksheet srcworkSheet = srcworkBook.Worksheets.get_Item(1);
 
-            //var result = Encoding.GetEncoding(sourcePath);
-            //var result = Encoding.RegisterProvider
+            var destPath = sourcePath_2;
+            Excel.Workbook destworkBook = excelApplication.Workbooks.Open(destPath, 0, false);
+            Excel.Worksheet destworkSheet = destworkBook.Worksheets.get_Item(1);
 
-            Encoding ascii = Encoding.ASCII;
-            Encoding unicode = Encoding.Unicode;
+            Excel.Range from = srcworkSheet.Range;
+            Excel.Range to = destworkSheet.Range("");
 
-            byte[] unicodeBytes = unicode.GetBytes(sourceText);
+            // if you use 2 instances of excel, this will not work
+            from.Copy(to);
 
-            byte[] asciiBytes = Encoding.Convert(unicode, ascii, unicodeBytes);
-
-            char[] asciiChars = new char[ascii.GetCharCount(asciiBytes, 0, asciiBytes.Length)];
-            ascii.GetChars(asciiBytes, 0, asciiBytes.Length, asciiChars, 0);
-            string asciiString = new string(asciiChars);
-
-            Console.WriteLine("Original string: {0}", unicodeString);
-            Console.WriteLine("Ascii converted string: {0}", asciiString);
-
-            //Console.WriteLine(sourceText);
-            //Console.WriteLine(result);
+            destworkBook.SaveAs("C:\\Documents and Settings\\HARRY\\Desktop\\FIXED Aging incident Report " + DateTime.Now.ToString("MM_dd_yyyy") + ".xls");
+            srcxlApp.Application.DisplayAlerts = false;
+            destxlApp.Application.DisplayAlerts = false;
+            destworkBook.Close(true, null, null);
+            srcworkBook.Close(false, null, null);
+            excelApplication.Quit();
 
             Console.ReadKey();
         }
@@ -86,20 +83,7 @@ namespace ConsoleForTest
     {
         public Encoding GetFileEncoding(string srcFile)
         {
-            /// Read the BOM
-            var bom = new byte[4];
-            using (var file = new FileStream(srcFile, FileMode.Open, FileAccess.Read))
-            {
-                file.Read(bom, 0, 4);
-            }
-
-            // Analyze the BOM
-            if (bom[0] == 0x2b && bom[1] == 0x2f && bom[2] == 0x76) return Encoding.UTF7;
-            if (bom[0] == 0xef && bom[1] == 0xbb && bom[2] == 0xbf) return Encoding.UTF8;
-            if (bom[0] == 0xff && bom[1] == 0xfe) return Encoding.Unicode; //UTF-16LE
-            if (bom[0] == 0xfe && bom[1] == 0xff) return Encoding.BigEndianUnicode; //UTF-16BE
-            if (bom[0] == 0 && bom[1] == 0 && bom[2] == 0xfe && bom[3] == 0xff) return Encoding.UTF32;
-            return Encoding.ASCII;
+            return null;
         }
     }
 }
