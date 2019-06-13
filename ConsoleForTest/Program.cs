@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -54,26 +55,47 @@ namespace ConsoleForTest
             // only one instance of excel
             Excel.Application excelApplication = new Excel.Application();
 
-            var srcPath = sourcePath_1;
-            Excel.Workbook srcworkBook = excelApplication.Workbooks.Open(srcPath);
-            Excel.Worksheet srcworkSheet = srcworkBook.Worksheets.get_Item(1);
+            excelApplication.Workbooks.Add();
+            string in_path = sourcePath_1;
+            string out_path = sourcePath_2;
+            Excel.Workbook in_workbook = excelApplication.Workbooks.Open(in_path);
+            Excel.Workbook out_workbook = excelApplication.Workbooks.Open(out_path);
+            Excel.Worksheet in_workSheet = in_workbook.Worksheets.get_Item(1);
+            Excel.Worksheet out_workSheet = out_workbook.Worksheets.get_Item(1);
 
-            var destPath = sourcePath_2;
-            Excel.Workbook destworkBook = excelApplication.Workbooks.Open(destPath, 0, false);
-            Excel.Worksheet destworkSheet = destworkBook.Worksheets.get_Item(1);
+            //Excel.Range source = (Excel.Range)(in_workSheet.UsedRange.Range["B2"]); 
 
-            Excel.Range from = srcworkSheet.Range;
-            Excel.Range to = destworkSheet.Range("");
 
-            // if you use 2 instances of excel, this will not work
-            from.Copy(to);
+            // TO DO
+            // Worksheet in_workSheet_1 = Global. //.GetVstoObject(this.Appliacation.ActiveWorkbook.Worksheets[1]);
+            // Excel.Range source = in_workSheet_1.Range["B2", "M12"].Value2;
 
-            destworkBook.SaveAs("C:\\Documents and Settings\\HARRY\\Desktop\\FIXED Aging incident Report " + DateTime.Now.ToString("MM_dd_yyyy") + ".xls");
-            srcxlApp.Application.DisplayAlerts = false;
-            destxlApp.Application.DisplayAlerts = false;
-            destworkBook.Close(true, null, null);
-            srcworkBook.Close(false, null, null);
-            excelApplication.Quit();
+
+
+            Excel.Range dest = out_workSheet.Range["O1"];
+            source.Copy(dest);
+
+
+            //var srcPath = sourcePath_1;
+            //Excel.Workbook srcworkBook = excelApplication.Workbooks.Open(srcPath);
+            //Excel.Worksheet srcworkSheet = srcworkBook.Worksheets.get_Item(1);
+
+            //var destPath = sourcePath_2;
+            //Excel.Workbook destworkBook = excelApplication.Workbooks.Open(destPath, 0, false);
+            //Excel.Worksheet destworkSheet = destworkBook.Worksheets.get_Item(1);
+
+            //Excel.Range from = srcworkSheet.Range;
+            //Excel.Range to = destworkSheet.Range("");
+
+            //// if you use 2 instances of excel, this will not work
+            //from.Copy(to);
+
+            //destworkBook.SaveAs("C:\\Documents and Settings\\HARRY\\Desktop\\FIXED Aging incident Report " + DateTime.Now.ToString("MM_dd_yyyy") + ".xls");
+            //srcxlApp.Application.DisplayAlerts = false;
+            //destxlApp.Application.DisplayAlerts = false;
+            //destworkBook.Close(true, null, null);
+            //srcworkBook.Close(false, null, null);
+            //excelApplication.Quit();
 
             Console.ReadKey();
         }
