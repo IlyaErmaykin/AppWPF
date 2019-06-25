@@ -73,7 +73,7 @@ namespace ConsoleForTest
 
 
             Excel.Range dest = out_workSheet.Range["O1"];
-            source.Copy(dest);
+            //source.Copy(dest);
 
 
             //var srcPath = sourcePath_1;
