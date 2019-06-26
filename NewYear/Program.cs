@@ -9,25 +9,47 @@ namespace NewYear
 {
     class Program
     {
+        /// <summary>
+        /// String off set cost
+        /// </summary>
+        const string stringOffset = " ";
+
+        /// <summary>
+        /// String count const
+        /// </summary>
+        const string stringCount = "*";
+
+        /// <summary>
+        /// aTimer field
+        /// </summary>
         private static System.Timers.Timer aTimer;
 
+        /// <summary>
+        /// _random field
+        /// </summary>
+        private Random _random = new Random();
+
+        /// <summary>
+        /// Main function;
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Program program = new Program();
 
             program.SetTimer();
 
-            //program.happyFunction();
-
-            //Timer myTimer = new Timer(new TimerCallback(CallBack), null, 0, 500);
-
             Console.ReadKey();
-
             aTimer.Stop();
             aTimer.Dispose();
         }
 
-        private void happyFunction(object source, EventArgs e)
+        /// <summary>
+        /// Rewrite TreeAction
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
+        private void rewriteTreeAction(object source, EventArgs e)
         {
             //string[] array = new string[] {    "                   /\\"    ,
             //                                   "                   **"    ,
@@ -52,11 +74,6 @@ namespace NewYear
             //                                   "****************************************"  };
 
             Console.Clear();
-            string[] array = new string[20];
-            string stringOffset = " " ;
-            string stringCount = "*";
-
-            var resultString = "";
 
             for (int i = 0; i <= 19; i++)
             {
@@ -78,18 +95,24 @@ namespace NewYear
             }
         }
 
-        private Random _random = new Random();
+        /// <summary>
+        /// Get random console color
+        /// </summary>
+        /// <returns></returns>
         private ConsoleColor GetRandomConsoleColor()
         {
             var consoleColors = Enum.GetValues(typeof(ConsoleColor));
             return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
         }
 
+        /// <summary>
+        /// Set timer function
+        /// </summary>
         private void SetTimer()
         {
             aTimer = new System.Timers.Timer(300);
   
-            aTimer.Elapsed += happyFunction;
+            aTimer.Elapsed += rewriteTreeAction;
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
         }
