@@ -37,22 +37,30 @@ namespace ConsoleForTest
         /// </summary> D(ab) = Math.Sqrt(Math.Pow((x1 - x0), 2) + Math.Pow((y1 - y0), 2))
         public void DistanceCalculation(int[,] newArray)
         {
-            int[,] distanceArray = null;
+            int[] distanceArray = null;
             double x0 = 0;
             double y0 = 0;
-            double x1 = 0;
-            double y1 = 0;
 
-            double countDistance = 0;
 
+            //double countDistance = 0;
 
             // Инициализируем данный массив 
             for (int i = 0; i < newArray.GetLength(0); i++)
             {
+                double x1 = 0;
+                double y1 = 0;
+
                 for (int j = 0; j < newArray.GetLength(1); j++)
                 {
                     //MyArray[i, j] = ran.Next(0, 10); 
-                    Console.Write("{0}\t", newArray[i, j]);
+                    Console.Write($"{newArray[i, j]}");
+
+                    if (x1 == 0)
+                        x1 = newArray[i, j];
+                    y1 = newArray[i, j];
+
+                    //distanceArray.Concat(new int[] { Math.Sqrt(((x0 - x1) * (x0 - x1) + (y0 - y1) * (y0 - y1)))});
+
 
                     //distanceArray[i, j] = newArray[i, j];
                     //if (j < 1)
