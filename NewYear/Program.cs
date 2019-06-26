@@ -9,9 +9,6 @@ namespace NewYear
 {
     class Program
     {
-        static string[] colors = Enum.GetNames(typeof(ConsoleColor));
-        static int index = 0;
-
         static void Main(string[] args)
         {
             Program program = new Program();
@@ -24,20 +21,9 @@ namespace NewYear
 
         }
 
-        enum Colors
-        {
-            White = 1,
-            Blue = 2,
-            Red = 3,
-            Green = 4,
-            Yellow = 5,
-            Pinc = 6,
-            BlueViolet = 7
-        }
-
         private void happyFunction()
         {
-            var input = Console.ReadKey();
+            //var input;
 
             string[] array = new string[] {    "                   /\\"    ,
                                                "                   **"    ,
@@ -54,7 +40,7 @@ namespace NewYear
                                                "        ************************"    ,
                                                "       **************************"    ,
                                                "      ****************************"    ,
-                                               "     ******************************"   ,
+                                               "     ******************************"    ,
                                                "    ********************************"    ,
                                                "   **********************************"    ,
                                                "  ************************************"    ,
@@ -63,57 +49,54 @@ namespace NewYear
 
            
             
-            while (input.Key != ConsoleKey.Escape)
+            for (int i = 0; i <= 22; i++)
             {
-                Console.Clear();
-                foreach (string i in array)
+                switch (i)
                 {
-                    switch (i)
-                    {
-                        case "1":
-                            {
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Console.WriteLine(i);
-                                break;
-                            }
-                        case "2":
-                            {
-                                Console.ForegroundColor = ConsoleColor.Blue;
-                                Console.WriteLine(i);
-                                break;
-                            }
-                        case "3":
-                            {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine(i);
-                                break;
-                            }
-                        case "4":
-                            {
-                                Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine(i);
-                                break;
-                            }
-                        case "5":
-                            {
-                                Console.ForegroundColor = ConsoleColor.Yellow;
-                                Console.WriteLine(i);
-                                break;
-                            }
-                        case "6":
-                            {
-                                Console.ForegroundColor = ConsoleColor.Cyan;
-                                Console.WriteLine(i);
-                                break;
-                            }
-                        default :
-                            {
-                                Console.ForegroundColor = ConsoleColor.Magenta;
-                                Console.WriteLine(i);
-                                break;
-                            }
-                    }
+                    case 1:
+                        {
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine(array[i]);
+                            break;
+                        }
+                    case 2:
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine(array[i]);
+                            break;
+                        }
+                    case 3:
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(array[i]);
+                            break;
+                        }
+                    case 4:
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine(array[i]);
+                            break;
+                        }
+                    case 5:
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(array[i]);
+                            break;
+                        }
+                    case 6:
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine(array[i]);
+                            break;
+                        }
+                    default :
+                        {
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            Console.WriteLine(array[i]);
+                            break;
+                        }
                 }
+            }
                     
                 //foreach (string i in array)
                 //{
@@ -125,4 +108,4 @@ namespace NewYear
             
         }     
     }
-}
+
