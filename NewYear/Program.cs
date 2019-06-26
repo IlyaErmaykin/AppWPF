@@ -9,103 +9,90 @@ namespace NewYear
 {
     class Program
     {
+        private static System.Timers.Timer aTimer;
+
         static void Main(string[] args)
         {
             Program program = new Program();
 
-            program.happyFunction();
+            program.SetTimer();
+
+            //program.happyFunction();
 
             //Timer myTimer = new Timer(new TimerCallback(CallBack), null, 0, 500);
 
             Console.ReadKey();
 
+            aTimer.Stop();
+            aTimer.Dispose();
         }
 
-        private void happyFunction()
+        private void happyFunction(object source, EventArgs e)
         {
-            //var input;
+            //string[] array = new string[] {    "                   /\\"    ,
+            //                                   "                   **"    ,
+            //                                   "                  ****"    ,
+            //                                   "                 ******"    ,
+            //                                   "                ********"    ,
+            //                                   "               **********"    ,
+            //                                   "              ************"    ,
+            //                                   "             **************"    ,
+            //                                   "            ****************"    ,
+            //                                   "           ******************"    ,
+            //                                   "          ********************"    ,
+            //                                   "         **********************"    ,
+            //                                   "        ************************"    ,
+            //                                   "       **************************"    ,
+            //                                   "      ****************************"    ,
+            //                                   "     ******************************"    ,
+            //                                   "    ********************************"    ,
+            //                                   "   **********************************"    ,
+            //                                   "  ************************************"    ,
+            //                                   " **************************************"   ,
+            //                                   "****************************************"  };
 
-            string[] array = new string[] {    "                   /\\"    ,
-                                               "                   **"    ,
-                                               "                  ****"    ,
-                                               "                 ******"    ,
-                                               "                ********"    ,
-                                               "               **********"    ,
-                                               "              ************"    ,
-                                               "             **************"    ,
-                                               "            ****************"    ,
-                                               "           ******************"    ,
-                                               "          ********************"    ,
-                                               "         **********************"    ,
-                                               "        ************************"    ,
-                                               "       **************************"    ,
-                                               "      ****************************"    ,
-                                               "     ******************************"    ,
-                                               "    ********************************"    ,
-                                               "   **********************************"    ,
-                                               "  ************************************"    ,
-                                               " **************************************"   ,
-                                               "****************************************"  };
+            Console.Clear();
+            string[] array = new string[20];
+            string stringOffset = " " ;
+            string stringCount = "*";
 
-           
-            
-            for (int i = 0; i <= 22; i++)
+            var resultString = "";
+
+            for (int i = 0; i <= 19; i++)
             {
-                switch (i)
+                var offset = 40 - i;
+                var count = (i + 1) * 2;
+
+                for (int y = offset; y > 0; y--)
                 {
-                    case 1:
-                        {
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.WriteLine(array[i]);
-                            break;
-                        }
-                    case 2:
-                        {
-                            Console.ForegroundColor = ConsoleColor.Blue;
-                            Console.WriteLine(array[i]);
-                            break;
-                        }
-                    case 3:
-                        {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine(array[i]);
-                            break;
-                        }
-                    case 4:
-                        {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine(array[i]);
-                            break;
-                        }
-                    case 5:
-                        {
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.WriteLine(array[i]);
-                            break;
-                        }
-                    case 6:
-                        {
-                            Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine(array[i]);
-                            break;
-                        }
-                    default :
-                        {
-                            Console.ForegroundColor = ConsoleColor.Magenta;
-                            Console.WriteLine(array[i]);
-                            break;
-                        }
+                    Console.Write(stringOffset);
                 }
+
+                for (int z = count; z > 0; z--)
+                {
+                    Console.ForegroundColor = GetRandomConsoleColor();
+                    Console.Write(stringCount);
+                }
+
+                Console.WriteLine();
             }
-                    
-                //foreach (string i in array)
-                //{
-                //    Console.Clear();
-                //    //if (i )
-                //    Console.WriteLine(i);
-                //}
-            }                
-            
-        }     
+        }
+
+        private Random _random = new Random();
+        private ConsoleColor GetRandomConsoleColor()
+        {
+            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
+        }
+
+        private void SetTimer()
+        {
+            aTimer = new System.Timers.Timer(300);
+  
+            aTimer.Elapsed += happyFunction;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
+        }
     }
+}
 
