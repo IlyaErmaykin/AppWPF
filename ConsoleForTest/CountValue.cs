@@ -37,7 +37,7 @@ namespace ConsoleForTest
         /// </summary> D(ab) = Math.Sqrt(Math.Pow((x1 - x0), 2) + Math.Pow((y1 - y0), 2))
         public void DistanceCalculation(int[,] newArray)
         {
-            int[] distanceArray = null;
+            int[] distanceArray;
             double x0 = 0;
             double y0 = 0;
 
@@ -59,7 +59,7 @@ namespace ConsoleForTest
                         x1 = newArray[i, j];
                     y1 = newArray[i, j];
 
-                    //distanceArray.Concat(new int[] { Math.Sqrt(((x0 - x1) * (x0 - x1) + (y0 - y1) * (y0 - y1)))});
+                    distanceArray [] = Math.Sqrt(((x0 - x1) * (x0 - x1) + (y0 - y1) * (y0 - y1)));
 
 
                     //distanceArray[i, j] = newArray[i, j];
