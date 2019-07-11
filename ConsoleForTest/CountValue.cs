@@ -27,7 +27,7 @@ namespace ConsoleForTest
             //    }
             //    Console.WriteLine();
             //}
-            return MyArray;
+            ; return MyArray;
         }
 
 
@@ -37,7 +37,7 @@ namespace ConsoleForTest
         /// </summary> D(ab) = Math.Sqrt(Math.Pow((x1 - x0), 2) + Math.Pow((y1 - y0), 2))
         public void DistanceCalculation(int[,] newArray)
         {
-            int[] distanceArray;
+            double[] distanceArray = { };
             double x0 = 0;
             double y0 = 0;
 
@@ -47,8 +47,11 @@ namespace ConsoleForTest
             // Инициализируем данный массив 
             for (int i = 0; i < newArray.GetLength(0); i++)
             {
+
                 double x1 = 0;
                 double y1 = 0;
+
+                double result = 0;
 
                 for (int j = 0; j < newArray.GetLength(1); j++)
                 {
@@ -59,8 +62,8 @@ namespace ConsoleForTest
                         x1 = newArray[i, j];
                     y1 = newArray[i, j];
 
-                    distanceArray [] = Math.Sqrt(((x0 - x1) * (x0 - x1) + (y0 - y1) * (y0 - y1)));
-
+                    result = Math.Sqrt((Math.Pow((x0 - x1), 2) + Math.Pow((y0 - y1), 2)));
+                    //distanceArray [] = result;
 
                     //distanceArray[i, j] = newArray[i, j];
                     //if (j < 1)
@@ -73,12 +76,14 @@ namespace ConsoleForTest
                 }
                 Console.WriteLine();
             }
-        }
 
-        /// <summary> 
-        /// Sorting function 
-        /// </summary> 
-        void SortingFunction()
-        { }
+            Console.WriteLine(distanceArray);
+
+            /// <summary> 
+            /// Sorting function 
+            /// </summary> 
+            void StringFunction()
+            { }
+        }
     }
 }
