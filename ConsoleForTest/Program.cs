@@ -23,58 +23,58 @@ namespace ConsoleForTest
     // 1.4 Список заполняемый случайными числами (List + random)
     //2 расчет евклидового расстояния; 
     //3 сортировка по убыванию 
-    //class Program
-    //{
-    //    /// <summary> 
-    //    /// Run program function
-    //    /// </summary> 
-    //    /// <param name="args"></param> 
-    //    static void Main(string[] args)
-    //    {
-    //        int[,] array = null;
-
-    //        CountValue countValue = new CountValue();
-
-    //        array = countValue.CreateArr();
-    //        countValue.DistanceCalculation(array);
-    //        //var arr = CreateArr
-    //        //DistanceCalculation(int MyArray[,]);
-
-    //        Console.ReadKey();
-    //    }
-    //}
-
     class Program
     {
+        /// <summary> 
+        /// Run program function
+        /// </summary> 
+        /// <param name="args"></param> 
         static void Main(string[] args)
         {
-            string s1 = "акт сверки"; //Строка с кириллическими символами
-            string s2 = "aкт cвepки"; //Строка с латинскими символами
+            int[,] array = null;
 
-            // Не подошедшая реализация
-            //if (Regex.IsMatch(s2, @"\p{IsCyrillic}"))
-            //{
-            //    Console.WriteLine("Успех!");
-            //} else
-            //{
-            //    Console.WriteLine("Не сегодня!");
-            //}
+            CountValue countValue = new CountValue();
 
-            foreach (char ch in s2)
-            {
-                if ((int)ch >= 97 && (int)ch <= 128)
-                {
-                    Console.WriteLine(ch);
-                }
-            }
-            
+            array = countValue.CreateArr();
+            countValue.DistanceCalculation(array);
+            //var arr = CreateArr
+            //DistanceCalculation(int MyArray[,]);
 
-            //if (s1 == s2)
-            //    Console.WriteLine("Успех!");
-            //Console.WriteLine("Не сегодня!");
             Console.ReadKey();
         }
     }
+
+    //class Program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        string s1 = "акт сверки"; //Строка с кириллическими символами
+    //        string s2 = "aкт cвepки"; //Строка с латинскими символами
+
+    //        // Не подошедшая реализация
+    //        //if (Regex.IsMatch(s2, @"\p{IsCyrillic}"))
+    //        //{
+    //        //    Console.WriteLine("Успех!");
+    //        //} else
+    //        //{
+    //        //    Console.WriteLine("Не сегодня!");
+    //        //}
+
+    //        foreach (char ch in s2)
+    //        {
+    //            if ((int)ch >= 97 && (int)ch <= 128)
+    //            {
+    //                Console.WriteLine(ch);
+    //            }
+    //        }
+            
+
+    //        //if (s1 == s2)
+    //        //    Console.WriteLine("Успех!");
+    //        //Console.WriteLine("Не сегодня!");
+    //        Console.ReadKey();
+    //    }
+    //}
 
     class Counter
     {

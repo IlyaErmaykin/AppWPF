@@ -27,7 +27,7 @@ namespace ConsoleForTest
             //    }
             //    Console.WriteLine();
             //}
-            ; return MyArray;
+            return MyArray;
         }
 
 
@@ -55,15 +55,11 @@ namespace ConsoleForTest
 
                 for (int j = 0; j < newArray.GetLength(1); j++)
                 {
-                    //MyArray[i, j] = ran.Next(0, 10); 
-                    Console.Write($"{newArray[i, j]}");
-
                     if (x1 == 0)
                         x1 = newArray[i, j];
                     y1 = newArray[i, j];
 
-                    result = Math.Sqrt((Math.Pow((x0 - x1), 2) + Math.Pow((y0 - y1), 2)));
-                    //distanceArray [] = result;
+                    
 
                     //distanceArray[i, j] = newArray[i, j];
                     //if (j < 1)
@@ -71,10 +67,11 @@ namespace ConsoleForTest
                     //    x1 = newArray.GetLength(0);
                     //}
                     //else y1 = newArray.GetLength(1);
-
-                    //Console.WriteLine($"{x1}, {y1}");
                 }
-                Console.WriteLine();
+
+                result = Math.Sqrt((Math.Pow((x0 - x1), 2) + Math.Pow((y0 - y1), 2)));
+                //distanceArray[] = result;
+                Console.WriteLine(result);
             }
 
             Console.WriteLine(distanceArray);
