@@ -16,8 +16,8 @@ namespace ConsoleForTest
     //убыванию их евклидового расстояния 
     //относительно точки (0, 0)
 
-    //1 создание двумерного массива;
-    // 1.1 Заполененый массив (Array)
+    // + //1 создание двумерного массива;
+    // + // 1.1 Заполененый массив (Array)
     // 1.2 Массив заполняемый случайными числами (Array + random)
     // 1.3 Список (List)
     // 1.4 Список заполняемый случайными числами (List + random)
@@ -32,13 +32,19 @@ namespace ConsoleForTest
         static void Main(string[] args)
         {
             int[,] array = null;
+            double[] arrayDistence = null;
+            double[] arraySorted = null;
 
             CountValue countValue = new CountValue();
 
             array = countValue.CreateArr();
-            countValue.DistanceCalculation(array);
-            //var arr = CreateArr
-            //DistanceCalculation(int MyArray[,]);
+            arrayDistence = countValue.DistanceCalculation(array);
+            arraySorted = countValue.SortingFunction(arrayDistence);
+
+            foreach (int i in arraySorted)
+            {
+                Console.WriteLine(i);
+            }
 
             Console.ReadKey();
         }

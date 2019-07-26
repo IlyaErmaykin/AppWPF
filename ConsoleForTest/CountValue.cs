@@ -35,9 +35,9 @@ namespace ConsoleForTest
         /// Distance calculation function,
         /// Formula for calculating: 
         /// </summary> D(ab) = Math.Sqrt(Math.Pow((x1 - x0), 2) + Math.Pow((y1 - y0), 2))
-        public void DistanceCalculation(int[,] newArray)
+        public double[] DistanceCalculation(int[,] newArray)
         {
-            double[] distanceArray = { };
+            double[] distanceArray = new double[5];
             double x0 = 0;
             double y0 = 0;
 
@@ -56,31 +56,32 @@ namespace ConsoleForTest
                 for (int j = 0; j < newArray.GetLength(1); j++)
                 {
                     if (x1 == 0)
+                    {
                         x1 = newArray[i, j];
-                    y1 = newArray[i, j];
-
-                    
-
-                    //distanceArray[i, j] = newArray[i, j];
-                    //if (j < 1)
-                    //{
-                    //    x1 = newArray.GetLength(0);
-                    //}
-                    //else y1 = newArray.GetLength(1);
+                    }
+                    else
+                    {
+                        y1 = newArray[i, j];
+                    }
                 }
 
                 result = Math.Sqrt((Math.Pow((x0 - x1), 2) + Math.Pow((y0 - y1), 2)));
-                //distanceArray[] = result;
-                Console.WriteLine(result);
+                //Console.WriteLine(result);
+                distanceArray[i] = result;
             }
 
-            Console.WriteLine(distanceArray);
+            return distanceArray;
+        }
 
-            /// <summary> 
-            /// Sorting function 
-            /// </summary> 
-            void StringFunction()
-            { }
+        /// <summary> 
+        /// Sorting function 
+        /// </summary> 
+        public double[] SortingFunction(double[] newArray)
+        {
+            Array.Sort(newArray);
+            Array.Reverse(newArray);
+
+            return newArray;
         }
     }
 }
