@@ -65,11 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CountValue.cs" />
-    <Compile Include="FlowCustomLib.cs" />
-    <Compile Include="Flows.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Timer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

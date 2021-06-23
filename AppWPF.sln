@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWPF", "AppWPF\AppWPF.csproj", "{1B82C843-54E0-4E4B-A407-181C48103134}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppForStreams", "AppForStreams\AppForStreams.csproj", "{96BED27E-50D3-4578-BF3D-51EF7B9D15B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewYear", "NewYear\NewYear.csproj", "{D9E63ACF-6C57-48CC-A112-539DC389F62D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNLog", "TestNLog\TestNLog.csproj", "{0036692E-D83E-4037-A074-40E912F9AF00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{D9E63ACF-6C57-48CC-A112-539DC389F62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9E63ACF-6C57-48CC-A112-539DC389F62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9E63ACF-6C57-48CC-A112-539DC389F62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0036692E-D83E-4037-A074-40E912F9AF00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0036692E-D83E-4037-A074-40E912F9AF00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0036692E-D83E-4037-A074-40E912F9AF00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0036692E-D83E-4037-A074-40E912F9AF00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
