@@ -20,6 +20,7 @@ namespace ConsoleForTest
         static void Main(string[] args)
         {
             //тест
+			//тест_1
         }
     }
 }
