@@ -21,6 +21,7 @@ namespace ConsoleForTest
         {
             //тест
 			//тест_1
+			//тест_2
         }
     }
 }
