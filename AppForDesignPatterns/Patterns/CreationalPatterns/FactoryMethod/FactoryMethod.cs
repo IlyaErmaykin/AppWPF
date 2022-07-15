@@ -10,6 +10,8 @@ namespace AppForDesignPatterns.Patterns.FactoryMethod
     {
     }
 
+    // Паттерн предполагает, что базовый класс делегирует создание объектов классам-наследникам.
+
     abstract class Product
     { }
 

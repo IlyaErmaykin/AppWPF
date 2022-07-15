@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppForDesignPatterns.Patterns.CreationalPatterns.FactoryMethod;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,13 @@ namespace AppForDesignPatterns
     {
         static void Main(string[] args)
         {
-            
+            // Обзор пораждающих паттернов;
+            // Фабричный метод;
+
+            FactoryMethodExample factoryMethodExample = new FactoryMethodExample();
+            factoryMethodExample.RunFactoryMethod();
+
+            Console.ReadKey();
         }
     }
 }

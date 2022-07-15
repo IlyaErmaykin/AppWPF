@@ -43,13 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patterns\Singleton\Singleton.cs" />
-    <Compile Include="Patterns\Singleton\SingletoneExample.cs" />
+    <Compile Include="Patterns\CreationalPatterns\FactoryMethod\FactoryMethod.cs" />
+    <Compile Include="Patterns\CreationalPatterns\FactoryMethod\FactoryMethodExample.cs" />
+    <Compile Include="Patterns\CreationalPatterns\Singleton\Singleton.cs" />
+    <Compile Include="Patterns\CreationalPatterns\Singleton\SingletoneExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
